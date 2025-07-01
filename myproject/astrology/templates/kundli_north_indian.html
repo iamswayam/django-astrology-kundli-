@@ -1,0 +1,17 @@
+<div class="kundli-grid">
+    {% for i in house_order %}
+        {% if i > 0 %}
+            <div class="kundli-cell">
+                <strong>House {{ i }}</strong><br>
+                <em>Cusp: {{ house_cusps.i }}°</em><br>
+                {% for planet in planet_data %}
+                    {% if planet.house == i %}
+                        {{ planet.name }} ({{ planet.degree }}°)<br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="kundli-cell"></div>
+        {% endif %}
+    {% endfor %}
+</div>
