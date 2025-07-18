@@ -1,0 +1,8 @@
+{# astrology/house_content.html #}
+<em>Cusp: {{ house_cusps.house_num }}°</em><br>
+<hr>
+{% for planet in planet_data %}
+    {% if planet.house == house_num %}
+        <b>{{ planet.name }}</b> ({{ planet.sign }} {{ planet.degree }}°)<br>
+    {% endif %}
+{% endfor %}

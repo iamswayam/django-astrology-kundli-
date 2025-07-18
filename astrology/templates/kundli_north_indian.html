@@ -1,0 +1,283 @@
+<pre>
+planet_data: {{ planet_data|safe }}
+house_numbers: {{ house_numbers|safe }}
+Lagna (Ascendant): {{ ascendant.sign }} {{ ascendant.degree }}°
+</pre>
+
+<style>
+.main {
+            height: 250px;
+            width: 250px;
+            border: 3px solid #000;
+            margin: 100px auto;
+            float: none;
+            overflow: hidden;
+        }
+        
+        .sub {
+            height: 175px;
+            width: 175px;
+            border: 3px solid #000;
+            transform: rotate(45deg);
+            margin-left: 37px;
+            margin-top: 37px;
+        }
+        
+        .line1 {
+            height: 10px;
+            width: 360px;
+            border-bottom: 3px solid #000;
+            transform: rotate(135deg);
+            margin-top: -95px;
+            margin-left: -50px;
+        }
+        
+        .line2 {
+            height: 10px;
+            width: 380px;
+            border-top: 3px solid #000;
+            transform: rotate(-135deg);
+            margin-left: -50px;
+            margin-top: -10px;  
+        }
+        p{
+            margin: 0;
+        }
+        .p1{
+            margin-top: -130px;
+            margin-left: 50px;
+        }
+        .p2{
+            margin-top: -35px;
+            margin-left: 180px;
+        }
+        .p3{
+            margin-left: 10px;
+        }
+        .p4{
+            margin-top: -35px;
+            margin-left: 110px;
+        }
+        .p5{
+            margin-top: -35px;
+            margin-left: 215px;
+        }
+        .p6{
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+        .p7{
+            margin-top: -35px;
+            margin-left: 170px;
+        }
+        .p8{
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .p9{
+            margin-top: -35px;
+            margin-left: 110px;
+        }
+        .p10{
+            margin-top: -35px;
+            margin-left: 215px;
+        }
+        .p11{
+            margin-top: 5px;
+            margin-left: 50px;
+        }
+        .p12{
+            margin-top: -35px;
+            margin-left: 180px;
+        }
+    </style>
+
+
+<div class="main">
+    <div class="sub"></div>
+    <div class="line1"></div>
+    <div class="line2"></div>
+
+    <p class="p1">
+        {% for planet in planet_data %}
+            {% if planet.house == 2 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p2">
+        {% for planet in planet_data %}
+            {% if planet.house == 1 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p3">
+        {% for planet in planet_data %}
+            {% if planet.house == 3 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p4">
+        <strong>{{ ascendant.sign }}</strong><br>
+        <strong>La</strong>
+        <small>{{ ascendant.degree }}°</small><br>
+        {% for planet in planet_data %}
+            {% if planet.house == 1 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p5">
+        {% for planet in planet_data %}
+            {% if planet.house == 11 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p6">
+        {% for planet in planet_data %}
+            {% if planet.house == 4 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p7">
+        {% for planet in planet_data %}
+            {% if planet.house == 10 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p8">
+        {% for planet in planet_data %}
+            {% if planet.house == 5 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p9">
+        {% for planet in planet_data %}
+            {% if planet.house == 7 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p10">
+        {% for planet in planet_data %}
+            {% if planet.house == 9 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p11">
+        {% for planet in planet_data %}
+            {% if planet.house == 6 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+    <p class="p12">
+        {% for planet in planet_data %}
+            {% if planet.house == 8 %}
+                <span>
+                    <strong>{{ planet.sign }}</strong>
+                    <strong>{{ planet.name }}</strong>
+                    <small>{{ planet.degree }}°</small>
+                </span><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+</div>
+
+
+
+
+
+
+
+
+{% comment %} 
+
+<div class="main">
+        <div class="sub"></div>
+        <div class="line1"></div>
+        <div class="line2"></div>
+    
+
+    <p class="p1">
+        {% for planet in planet_data %}
+            {% if planet.house == 2 %}
+            <strong>{{ planet.sign }}</strong><br>
+                <strong>{{ planet.name }}</strong><br>
+                <small> {{ planet.degree }}°</small><br>
+            {% endif %}
+        {% endfor %}
+    </p>
+
+    <p class="p2">
+        {% for planet in planet_data %}
+            {% if planet.house == 12 %}
+                <strong>{{ planet.sign }}</strong><br>
+                <strong>{{ planet.name }}</strong><br>
+                <small> {{ planet.degree }}°</small><br>
+            {% endif %}
+         {% endfor %}
+     </p>
+
+        <p class="p3">AA<br>&nbsp;03</p>
+        <p class="p4">AA<br>&nbsp;04</p>
+        <p class="p5">AA<br>&nbsp;05</p>
+        <p class="p6">AA<br>&nbsp;06</p>
+        <p class="p7">AA<br>&nbsp;07</p>
+        <p class="p8">AA<br>&nbsp;08</p>
+        <p class="p9">AA<br>&nbsp;09</p>
+        <p class="p10">AA<br>&nbsp;10</p>
+        <p class="p11">AA<br>&nbsp;11</p>
+        <p class="p12">AA<br>&nbsp;12</p>
+    </div>  {% endcomment %}
